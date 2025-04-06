@@ -1,0 +1,36 @@
+# Cabal build artifacts
+dist/
+dist-newstyle/
+cabal.project.local
+cabal.project.local~ 
+*.buildinfo
+*.hi
+*.o
+*.dyn_o
+*.dyn_hi
+*.prof
+*.aux
+*.hp
+*.eventlog
+
+# Stack build artifacts
+.stack-work/
+
+# Haskell IDE tooling
+.ghc.environment.*
+.ghc.*
+
+# Binary files
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Logs and temporary files
+*.log
+*.tmp
+*.lock
+
+# OS-specific files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,59 @@
+cabal-version:       2.2
+
+name:                uptimewatcher
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/KuroshiD/uptimewatcher#readme
+license:             BSD-3-Clause
+license-file:        LICENSE
+author:              KuroshiD
+maintainer:          gustavo@lgsanchez.com.br
+copyright:           2025 KuroshiD
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+                     CHANGELOG.md
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     UptimeWatcher.State
+                       UptimeWatcher.Monitor
+                       UptimeWatcher.HTTPClient
+                       UptimeWatcher.Concurrency
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5,
+                       stm,
+                       http-client,
+                       http-client-tls,
+                       http-types,
+                       ansi-terminal,
+                       time,
+                       async
+
+executable uptimewatcher
+  hs-source-dirs:      app, src
+  main-is:             Main.hs
+  other-modules:       UptimeWatcher.State
+                       UptimeWatcher.Monitor
+                       UptimeWatcher.HTTPClient
+                       UptimeWatcher.Concurrency
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5,
+                       uptimewatcher,
+                       stm,
+                       http-client,
+                       http-client-tls,
+                       http-types,
+                       ansi-terminal,
+                       time,
+                       async
+  ghc-options:         -Wall
+                       -Wcompat
+                       -Widentities
+                       -Wincomplete-record-updates
+                       -Wincomplete-uni-patterns
+                       -Wmissing-export-lists
+                       -Wmissing-home-modules
+                       -Wpartial-fields
+                       -Wredundant-constraints
